@@ -13,5 +13,6 @@ Things to show:
 - Express.js
 - Websockets with Primus & EngineIO?
 - File access
+- Promises (bluebird?)
 - Database access (mongo/postgres)
 - Testing with Jasmine, Sandboxed module
