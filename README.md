@@ -8,6 +8,8 @@ Exercise?:
 
 Things to show:
 - Setup (modules, require, overall structure, npm commands)
+- Grunt?
+- Windows with Cygwin?
 - Express.js
 - Websockets with Primus & EngineIO?
 - File access
