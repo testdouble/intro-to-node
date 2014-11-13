@@ -4,7 +4,7 @@ File Reader
 Challenge
 ---------
 
-Implement a file node.js file reader. The program should take in a file name as an argument from the command line and it should display the contents of that file to standard out.
+Implement a file Node.js file reader. The program should take in a file name as an argument from the command line and it should display the contents of that file to standard out.
 
 Hints
 -----
@@ -15,6 +15,5 @@ Hints
 Bonus
 -----
 
-- Spit out a usage message if the filename parameter is not defined.
-- Run endlessly, and if the file is changed, notify the user and redisplay the contents.
-- Use ChildProcess to spawn a native command instead of readFile.
+- Spit out a usage message if the filename parameter is not provided.
+- Output a good error message if the file is not found.
