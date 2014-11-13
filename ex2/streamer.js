@@ -7,7 +7,6 @@ if (!filename) {
   throw Error("A file to watch must be specified!");
 }
 
-
 var stream = fs.createReadStream(filename);
 
 stream.on('data', function(chunk) {

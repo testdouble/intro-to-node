@@ -4,7 +4,7 @@ var fs = require('fs');
 var filename = process.argv[2];
 
 if (!filename) {
-  throw Error("A file to watch must be specified!");
+  throw Error("A file must be specified!");
 }
 
 fs.readFile(filename, {encoding: 'utf8'}, function(err, data) {
