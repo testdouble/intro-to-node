@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Websocket Tail</title>
+  </head>
+  <body>
+    <form action="">
+      <input id="filename" autocomplete="off" /><button>Get File</button>
+    </form>
+    <ul id="messages"></ul>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var socket = io();
+      $('form').submit(function(){
+        socket.emit('file-request', $('#filename').val());
+        return false;
+      });
+      socket.on('file-response', function(data){
+        console.log('Response: ' + JSON.stringify(data));
+        if (data.status) {
+          $('#messages').html('');
+          $('#messages').append($('<li>').text(data.status));
+        }
+        else {
+          $('#messages').append($('<li>').text(data.content));
+        }
+      });
+    </script>
+  </body>
+</html>
