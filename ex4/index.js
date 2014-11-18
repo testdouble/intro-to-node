@@ -9,7 +9,15 @@ var fs = require('fs');
 
 
 app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+app.get('/socket.io-1.2.0.js', function(req, res){
+  res.sendFile(path.join(__dirname, 'public/socket.io-1.2.0.js'));
+});
+
+app.get('/jquery-1.11.1.js', function(req, res){
+  res.sendFile(path.join(__dirname, 'public/jquery-1.11.1.js'));
 });
 
 io.on('connection', function(socket){
@@ -21,19 +29,20 @@ io.on('connection', function(socket){
     if (!fs.existsSync(filename)) {
       socket.emit('file-response', {status: 'Cannot find ' + filename});
     }
+    else {
+      var tail = new Tail(filename, '\n');
 
-    var tail = new Tail(filename, '\n');
+      tail.on("line", function(data) {
+        socket.emit('file-response', {content: data});
+      });
 
-    tail.on("line", function(data) {
-      socket.emit('file-response', {content: data});
-    });
+      tail.on("error", function(error) {
+        socket.emit('file-response', {status: 'Cannot process ' + filename + ', error: ' + error});
+        console.log('ERROR: ', error);
+      });
 
-    tail.on("error", function(error) {
-      socket.emit('file-response', {status: 'Cannot process ' + filename + ', error: ' + error});
-      console.log('ERROR: ', error);
-    });
-
-    tail.watch();
+      tail.watch();
+    }
   });
 
   socket.on('disconnect', function(socket){
