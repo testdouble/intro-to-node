@@ -18,11 +18,13 @@ Exercise?:
 
 Things to show:
 - Setup (modules, require, overall structure, npm commands)
-- Grunt?
-- Windows with Cygwin?
-- Express.js
-- Websockets with Primus & EngineIO?
 - File access
+- Express.js
+- Websockets with SocketIO
+
+- Windows with Cygwin?
+
+Won't have time for:
 - Promises (bluebird?)
 - Database access (mongo/postgres)
 - Testing with Jasmine, Sandboxed module
