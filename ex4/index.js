@@ -4,7 +4,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
-var Tail = require('always-tail')
+var Tail = require('always-tail');
 var fs = require('fs');
 
 

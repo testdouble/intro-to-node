@@ -16,4 +16,4 @@ Bonus
 -----
 
 - Spit out a usage message if the filename parameter is not provided.
-- Output a good error message if the file is not found.
+- Prompt the user and read the filename in from stdin.

@@ -10,9 +10,7 @@ Hints
 -----
 
 - If you haven't already got a working tail emitter you can use [always-tail](https://github.com/jandre/always-tail).
-- Get a socket connect working from client to server.
-- Get a socket disconnect working from client to server.
-- Get a filename passed from client to server with a custom emit.
+- Change code from part 1 to take a filename passed from client to server with a custom emit.
 - Get a response on whether the filename exists from the server to the client.
 - Get lines sent back as they are emitted from the watcher.
 - A log generator is included in lib/logWriter.js. Simply execute it and a log file named mybigfile.log will be created and updated every 5 seconds.
