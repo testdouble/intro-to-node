@@ -4,9 +4,8 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
-var Tail = require('always-tail');
+var FileMon = require('../ex2/filemon.js');
 var fs = require('fs');
-
 
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, 'public/index.html'));
@@ -30,18 +29,11 @@ io.on('connection', function(socket){
       socket.emit('file-response', {status: 'Cannot find ' + filename});
     }
     else {
-      var tail = new Tail(filename, '\n');
+      var filemon = FileMon.watch(filename);
 
-      tail.on("line", function(data) {
+      filemon.on("data", function(data) {
         socket.emit('file-response', {content: data});
       });
-
-      tail.on("error", function(error) {
-        socket.emit('file-response', {status: 'Cannot process ' + filename + ', error: ' + error});
-        console.log('ERROR: ', error);
-      });
-
-      tail.watch();
     }
   });
 
