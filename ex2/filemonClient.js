@@ -11,8 +11,3 @@ client.on('data', function(data) {
   console.log('File watch, emitted data!');
   console.log(data);
 });
-
-client.on('err', function(err) {
-  console.log('File watch, emitted ERROR!');
-  console.log(err);
-});

@@ -9,11 +9,18 @@ var FileMon = function(filename) {
   self.filename = filename;
   events.EventEmitter.call(this);
 
-  fs.watch(self.filename, function(event, filename) {
+  if (!fs.existsSync(filename)) {
+    throw new Error('File does not exist!');
+  }
+
+  fs.readFile(self.filename, {encoding: 'utf8'}, function(err, data) {
+    if (data) {
+      self.emit('data', data);
+    }
+  });
+
+  fs.watch(self.filename, function() {
     fs.readFile(self.filename, {encoding: 'utf8'}, function(err, data) {
-      if (err) {
-        self.emit('error', err);
-      }
       if (data) {
         self.emit('data', data);
       }
