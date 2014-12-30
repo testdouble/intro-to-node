@@ -19,7 +19,7 @@ var FileMon = function(filename) {
     }
   });
 
-  fs.watch(self.filename, function() {
+  fs.watchFile(filename, function() {
     fs.readFile(self.filename, {encoding: 'utf8'}, function(err, data) {
       if (data) {
         self.emit('data', data);

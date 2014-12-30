@@ -9,6 +9,8 @@ Implement a socket server that echoes whatever the client passes in. [Express](h
 Hints
 -----
 
+- npm init will create a default npm project and structure.
+- Dependencies can be added by using *npm install express --save*
 - Get a socket connect working from client to server.
 - Get a socket disconnect working from client to server.
 - Get a value passed from client to server with a custom emit.
@@ -16,4 +18,4 @@ Hints
 Bonus
 -----
 
-- None?
+- Make the HTML purdy
