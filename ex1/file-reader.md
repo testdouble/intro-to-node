@@ -11,7 +11,7 @@ Hints
 
 - You'll want to use the Node.js built in [file system module.] (http://nodejs.org/api/fs.html#fs_file_system)
 - Arguments are passed into the Node.js program via the process.argv array
-
+- [Video walkthrough] (http://youtu.be/O0Do547ozxY) of a solution.
 Bonus
 -----
 
