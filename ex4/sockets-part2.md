@@ -9,13 +9,13 @@ We need to broadcast the secret codes over a socket connection to the browser. W
 Hints
 -----
 
-- Change code from exercise 3 to take a filename passed from client to server with a custom emit.
+- Change code from exercise 3 to take in the filename passed from client to server with a custom emit.
 - Get a response on whether the filename exists from the server to the client.
-- Get updates sent back as they are emitted from the watcher.
-- The code generator is included in lib. Simply execute it and a secret file will be created and updated every 5 seconds.
+- Get updates on this file sent back as they are emitted from the watcher.
 
 Bonus
 -----
 
+- Check out Mocha or Jasmine for testing this code.
 - Ask your instructors for a t-shirt.
 - Buy your facilitators a beer after this session.

@@ -17,3 +17,4 @@ Bonus
 
 - Spit out a usage message if the filename parameter is not provided.
 - Prompt the user and read the filename in from stdin.
+- Contents are encrypted, decrypt the output
