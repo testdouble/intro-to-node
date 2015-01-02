@@ -10,21 +10,6 @@ This precompiler will not advocate the use of Node.js for every problem ever jus
 
 We'll use a structured curriculum to guide students through introductory aspects of Node.js, eventually building a realtime web socket solution that shows off it's true power. This precompiler assumes 0 knowledge of anything Node.js, although you may need a pair partner if you are not very familiar with the JavaScript programming language. Bring a laptop, a friend, and your brain, and walk away with a life-altering, mind-expanding experience (or at least enough Node.js knowledge to land a new job).
 
-Workshop Thoughts
------------------
-
-Exercise?:
-- Web enabled log watcher? Shows off streaming, file access, websockets and express? Could have a portion capture to a database?
-
-Things to show:
-- Setup (modules, require, overall structure, npm commands)
-- File access
-- Express.js
-- Websockets with SocketIO
-
-- Windows with Cygwin?
-
-Won't have time for:
-- Promises (bluebird?)
-- Database access (mongo/postgres)
-- Testing with Jasmine, Sandboxed module
+Workshop
+--------
+Running the codeGenerator.js file will start producing the bomb disarming codes. From there you'll just need to follow the instructions in each exercises to move forward. Good luck!
