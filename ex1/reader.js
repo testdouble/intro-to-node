@@ -1,6 +1,7 @@
 'use strict';
 
 var fs = require('fs');
+var bombCrypto = require('./bombCrypto');
 var filename = process.argv[2];
 
 if (!filename) {
@@ -9,5 +10,7 @@ if (!filename) {
 
 fs.readFile(filename, {encoding: 'utf8'}, function(err, data) {
   if (err) throw err;
-  console.log(data);
+
+  var decryptedData = bombCrypto.decrypt(data);
+  console.log(decryptedData);
 });

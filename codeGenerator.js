@@ -25,6 +25,7 @@ var interval = setInterval(function() {
     var token = buf.toString('hex');
     var content = 'CODES[' + new Date() + '] - ' + token + '\n';
 
+    console.log('Writing bomb code...');
     fs.writeFile("./secretbombdisarmingcodes.txt", encrypt(content),
       function(err) {
         if (err) {
