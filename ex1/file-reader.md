@@ -4,7 +4,7 @@ File Reader
 Challenge
 ---------
 
-Implement a file Node.js file reader. The program should take in a file name as an argument from the command line and it should display the contents of that file to standard out.
+Implement a Node.js file reader. The program should take in a file name as an argument from the command line and it should display the contents of that file to standard out.
 
 Hints
 -----
