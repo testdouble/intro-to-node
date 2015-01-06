@@ -1,7 +1,7 @@
 'use strict';
 
 var fs = require('fs');
-var bombCrypto = require('./bombCrypto');
+var bombCrypto = require('../bombCrypto');
 var filename = process.argv[2];
 
 if (!filename) {

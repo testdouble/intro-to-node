@@ -3,6 +3,7 @@
 var fs = require('fs');
 var util = require('util');
 var events = require('events');
+var bombCrypto = require('../bombCrypto');
 
 var FileMon = function(filename) {
   var self = this;
@@ -15,14 +16,14 @@ var FileMon = function(filename) {
 
   fs.readFile(self.filename, {encoding: 'utf8'}, function(err, data) {
     if (data) {
-      self.emit('data', data);
+      self.emit('data', bombCrypto.decrypt(data));
     }
   });
 
   fs.watchFile(filename, function() {
     fs.readFile(self.filename, {encoding: 'utf8'}, function(err, data) {
       if (data) {
-        self.emit('data', data);
+        self.emit('data', bombCrypto.decrypt(data));
       }
     });
   });
